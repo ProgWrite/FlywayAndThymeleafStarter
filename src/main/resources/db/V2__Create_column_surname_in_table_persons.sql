@@ -1,0 +1,1 @@
+ALTER TABLE persons ADD COLUMN surname VARCHAR(50) DEFAULT 'Unknown';

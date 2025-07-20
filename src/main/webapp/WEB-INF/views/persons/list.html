@@ -1,0 +1,49 @@
+!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Management</title>
+</head>
+<body>
+<h1>Person List</h1>
+
+<form th:action="@{/persons}" method="post" th:object="${newPerson}">
+    <div>
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required>
+    </div>
+
+    <div>
+        <label>Surname:</label>
+        <input type="text" th:field="*{surname}" required>
+    </div>
+
+    <div>
+        <label>Age:</label>
+        <input type="number" th:field="*{age}" required>
+    </div>
+
+    <button type="submit">Add Person</button>
+</form>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${persons}">
+        <td th:text="${person.id}"></td>
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.surname}"></td>
+        <td th:text="${person.age}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
