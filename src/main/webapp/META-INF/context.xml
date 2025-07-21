@@ -1,8 +1,0 @@
-<Context>
-    <Resources>
-        <PreResources
-                className="org.apache.catalina.webresources.FileResourceSet"
-                base="${catalina.base}/conf/logging.properties"
-                webAppMount="/WEB-INF/classes/logging.properties"/>
-    </Resources>
-</Context>
